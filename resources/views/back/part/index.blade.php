@@ -22,7 +22,7 @@
             @foreach($users as $user)
                 <tr>{{-- //Faire avec les users--}}
                     @php
-                        $priceStay = round($pricePart*$user->part->days, 2);
+                        $priceStay = round($pricePart*$user->part->day, 2);
                         $priceDebit =  $user->spendings()->sum('spending_user.price');
                     @endphp
                     <th scope="row">{{$user->name}}</th>
