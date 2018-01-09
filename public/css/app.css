@@ -8494,3 +8494,21 @@ button.close {
   margin: 5rem auto;
 }
 
+body {
+  background-color: #ffffff !important;
+}
+
+.avatar {
+  height: 70px;
+  width: 70px;
+}
+
+.avatar1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+

@@ -29,7 +29,7 @@ class DashboardController extends Controller
     public function balance()
     {
 
-    $users = User::all();
+    $users = User::paginate(env('APP_PAGINATE'));
     $totalSpending = $this->totalSpending();
     $sumPart = Part::sum('day');
     $pricePart = round($totalSpending / $sumPart, 2);

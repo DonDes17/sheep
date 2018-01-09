@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid col-lg-offset-4 col-lg-4">
-
+        {{$users->links()}}
         <ul>
             <li>Total des Dépenses : {{$totalSpending}} &euro;</li>
             <li>Total des  parts : {{$pricePart}} parts</li>
@@ -34,7 +34,7 @@
             @endforeach
             </tbody>
         </table>
-
+        {{$users->links()}}
     </div>
 
 

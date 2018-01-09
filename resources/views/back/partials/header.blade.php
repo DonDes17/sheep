@@ -18,6 +18,7 @@
                 <li><a href="{{route('spending.create')}}">Ajouter une dépense</a>
                 </li>
                 <li><a href="{{route('user.index')}}">User</a></li>
+                <li><a href="{{route('part')}}">Balance</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
