@@ -14,7 +14,7 @@
 <body class="has-navbar-fixed-top">
 @include('back.partials.header')
 <div class="container">
-    @include('back.flash')
+    @include('partials.flash.message')
     @yield('content')
 </div>
 

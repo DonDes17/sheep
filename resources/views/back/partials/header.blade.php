@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,6 +23,7 @@
                 <li><a href="{{route('part')}}">Balance</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li style="color: #ffffff; font-size: 18px; padding-top: 13px;"> Total :{{$total}} &euro;</li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

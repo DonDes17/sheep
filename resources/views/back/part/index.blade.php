@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid col-lg-offset-4 col-lg-4">
+    <div class="container-fluid col-lg-offset-2 col-lg-8">
         {{$users->links()}}
         <ul>
             <li>Total des Dépenses : {{$totalSpending}} &euro;</li>

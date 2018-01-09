@@ -15,8 +15,20 @@
     return view('welcome');
 });*/
 
-Route::get('/', 'FrontController@index');
-Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-Route::get('part', 'DashboardController@balance')->name('part');
-Route::resource('spending', 'SpendingController');
-Route::resource('user', 'PictureController');
+
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/', 'FrontController@index');
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('part', 'DashboardController@balance')->name('part');
+    Route::resource('spending', 'SpendingController');
+    Route::resource('user', 'PictureController');
+
+
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+
+});

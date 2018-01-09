@@ -3,7 +3,7 @@
 <div class="container">
 
     <h1>Histogramme</h1>
-        <p>PLACE de l'histogramme</p>
+
 
     @include('back.partials.graph')
 
