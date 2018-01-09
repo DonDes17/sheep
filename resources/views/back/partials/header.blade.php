@@ -23,7 +23,56 @@
                 <li><a href="{{route('part')}}">Balance</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li style="color: #ffffff; font-size: 18px; padding-top: 13px;"> Total :{{$total}} &euro;</li>
+
+                {{-- <li style="color: #ffffff; font-size: 18px; padding-top: 13px;"> Total :{{$total}} &euro;</li>--}}
+                <!-- Authentication Links -->
+                    @guest
+                        <p class="control">
+                            <a class="button is-primary" href="{{ route('login') }}">
+            <span class="icon">
+                <i class="fa fa-user-circle"></i>
+            </span>
+                                <span>Login</span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-info" href="{{ route('register') }}">
+            <span class="icon">
+                <i class="fa fa-user-circle"></i>
+            </span>
+                                <span>Register</span>
+                            </a>
+                        </p>
+                    @else
+                        <p class="control">
+                            <a class="button is-primary" href="#">
+                <span class="icon">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                                <span>{{ Auth::user()->name }}</span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-primary" href="#">
+            <span class="icon">
+                <i class="fa fa-shopping-cart"></i>
+            </span>
+                                <span>{{ $total ?? '00' }}&euro;</span>
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a class="button is-danger" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            <span class="icon">
+                <i class="fa fa-sign-out"></i>
+            </span>
+                                <span>Logout</span>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </a>
+                        </p>
+                    @endguest
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
