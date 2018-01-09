@@ -1,0 +1,13 @@
+@for $i from 1 through 20 {
+  .graphic-#{$i} {
+    background-color: nth($colors, $i);
+    color: $text-graphic;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+}
+
+.grid{
+  margin: 5rem auto;
+}
