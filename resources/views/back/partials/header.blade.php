@@ -30,44 +30,17 @@
                 {{-- --}}
                 <!-- Authentication Links -->
                     @guest
-                        <p class="control">
-                            <a class="button is-primary" href="{{ route('login') }}">
-                        <span class="icon">
-                            <i class="fa fa-user-circle"></i>
-                        </span>
-                                <span>Login</span>
-                            </a>
-                        </p>
-                        <p class="control">
-                            <a class="button is-info" href="{{ route('register') }}">
-            <span class="icon">
-                <i class="fa fa-user-circle"></i>
-            </span>
-                                <span>Register</span>
-                            </a>
-                        </p>
+                         <li><a class="button is-primary" href="{{ route('login') }}"> <i class="fa fa-user-circle"></i>Login </a></li>
+                         <li> <a class="button is-info" href="{{ route('register') }}"><i class="fa fa-user-circle"></i>Register </a></li>
                     @else
-                        <p class="control">
-                            <a class="button is-primary" href="#">
-                <span class="icon">
-                    <i class="fa fa-user-circle"></i>
-                </span>
-                                <span>{{ Auth::user()->name }}</span>
-                            </a>
-                        </p>
-
-                        <p class="control">
-                            <a class="button is-danger" href="{{ route('logout') }}"
+                        <li><a class="button is-primary" href="#"> <i class="fa fa-user-circle"></i>{{ Auth::user()->name }}</a></li>
+                        <li><a class="button is-danger" href="{{ route('logout') }}"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-            <span class="icon">
-                <i class="fa fa-sign-out"></i>
-            </span>
-                                <span>Logout</span>
+                                <i class="fa fa-sign-out"></i>logout
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
-                            </a>
-                        </p>
+                            </a></li>
                     @endguest
             </ul>
             @endif
