@@ -15,23 +15,26 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            @if(Auth::check())
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{route('spending.index')}}">Liste des dépenses <span class="sr-only">(current)</span></a></li>
                 <li><a href="{{route('spending.create')}}">Ajouter une dépense</a>
                 </li>
                 <li><a href="{{route('user.index')}}">User</a></li>
                 <li><a href="{{route('part')}}">Balance</a></li>
+                <li style="color: #ffffff; font-size: 18px; padding-top: 13px;padding-left: 50px;"> Total :{{$total}} &euro;</li>
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
 
-                {{-- <li style="color: #ffffff; font-size: 18px; padding-top: 13px;"> Total :{{$total}} &euro;</li>--}}
+                {{-- --}}
                 <!-- Authentication Links -->
                     @guest
                         <p class="control">
                             <a class="button is-primary" href="{{ route('login') }}">
-            <span class="icon">
-                <i class="fa fa-user-circle"></i>
-            </span>
+                        <span class="icon">
+                            <i class="fa fa-user-circle"></i>
+                        </span>
                                 <span>Login</span>
                             </a>
                         </p>
@@ -52,14 +55,7 @@
                                 <span>{{ Auth::user()->name }}</span>
                             </a>
                         </p>
-                        <p class="control">
-                            <a class="button is-primary" href="#">
-            <span class="icon">
-                <i class="fa fa-shopping-cart"></i>
-            </span>
-                                <span>{{ $total ?? '00' }}&euro;</span>
-                            </a>
-                        </p>
+
                         <p class="control">
                             <a class="button is-danger" href="{{ route('logout') }}"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -74,6 +70,7 @@
                         </p>
                     @endguest
             </ul>
+            @endif
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
